@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/facelets">
+<h:head>
+  <title><f:insert name="title">App JSF de Teste</f:insert></title>
+</h:head>
+
+<h:body style="margin: 0px;">
+<f:debug hotkey="x" rendered="#{initParam['javax.faces.FACELETS_DEVELOPMENT']}"/>
+
+<div id="header">
+    <f:insert name="header">
+    	<!--  include your header file or uncomment the include below and create header.xhtml in this directory -->
+    	<f:include src="/WEB-INF/templates/header.xhtml"/>
+    </f:insert>
+</div>
+
+
+<div id="content">
+  <f:insert name="content">
+  </f:insert>
+</div>
+
+<div id="footer">
+  <f:insert name="footer">
+    	<!--  include your header file or uncomment the include below and create footer.xhtml in this directory -->
+		<f:include src="/WEB-INF/templates/footer.xhtml"/>
+  </f:insert>
+</div>
+
+</h:body>
+
+</html>

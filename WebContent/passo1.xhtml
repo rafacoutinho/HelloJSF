@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/WEB-INF/templates/template.xhtml">
+    <ui:define name="content">
+		<p>PASSO #{fluxoController.passo}</p>
+    	<h:form>
+    		<h:outputScript name="jsf.js" library="javax.faces" target="head"/>
+			<p>
+				Nome: 
+				<h:inputText id="nome" value="#{fluxoController.fluxo.pessoa.nome}" required="true" requiredMessage="Campo Nome obrigatório" label="Nome"/>
+				<h:message for="nome" style="color:red" />
+			</p>
+			<p>
+				Sexo: 
+				<h:selectOneRadio id="sexo" value="#{fluxoController.fluxo.pessoa.sexo}" required="true" requiredMessage="Campo Sexo obrigatório" label="Sexo">
+					<f:selectItems value="#{fluxoController.listaChavesSexo}" var="item" itemLabel="#{item.valor}" itemValue="#{item.chave}" />
+				</h:selectOneRadio>
+				<h:message for="sexo" style="color:red" />
+			</p>
+			
+			<h:commandButton action="#{fluxoController.proximaPagina}" value="Avancar"/>
+		
+		</h:form>
+    </ui:define>
+</ui:composition>
+</html>
